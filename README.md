@@ -10,7 +10,9 @@ It also has the essentials mod, so you can use free or paid (cosmetics shop belo
 ## Settings
 
 To set keystrokes use the command /keystrokes
+
 To set The 5zig Mod use the button in the options
+
 To set mod Essentials also use the button in the options
 
 ## Installation 
