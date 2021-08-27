@@ -1,0 +1,10 @@
+{
+  "replacements": [
+    {
+      "message": "\forgepvp",
+      "replacement": "Hi! I\u0027m using Forge PVP. it\u0027s free optimization PVP modpack for Minecraft 1.8.9!",
+      "ignoresCommands": true,
+      "replaceInsideWords": false
+    }
+  ]
+}

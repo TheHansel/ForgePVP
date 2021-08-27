@@ -1,0 +1,40 @@
+{
+  "lastServers": [
+    {
+      "Name": "eu.the5zig.mod.server.GameServer",
+      "Value": {
+        "configName": "mineplex",
+        "host": "mineplex.com",
+        "port": 25565,
+        "time": 1630075383814
+      }
+    },
+    {
+      "Name": "eu.the5zig.mod.server.Server",
+      "Value": {
+        "host": "hypixel.pl",
+        "port": 25565,
+        "time": 1630066596529
+      }
+    },
+    {
+      "Name": "eu.the5zig.mod.server.Server",
+      "Value": {
+        "host": "pika-network.net",
+        "port": 25565,
+        "time": 1630066523266
+      }
+    },
+    {
+      "Name": "eu.the5zig.mod.server.GameServer",
+      "Value": {
+        "configName": "hypixel",
+        "lobby": "dynamiclobby20D",
+        "host": "hypixel.net",
+        "port": 25565,
+        "time": 1630064197063
+      }
+    }
+  ],
+  "MAX_SERVER_COUNT": 5
+}
