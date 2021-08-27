@@ -1,0 +1,43 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.dragon_head",
+				"texture_width": 48,
+				"texture_height": 48,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "head",
+					"parent": "root",
+					"pivot": [0, 0, 0],
+					"mirror": true,
+					"cubes": [
+						{"origin": [-3, 26, -12], "size": [6, 3, 8], "uv": [0, 16], "mirror": false},
+						{"origin": [-4, 24, -4], "size": [8, 8, 8], "uv": [0, 0], "mirror": false},
+						{"origin": [2, 32, -1], "size": [1, 2, 3], "uv": [0, 0], "mirror": false},
+						{"origin": [2, 29, -11], "size": [1, 1, 2], "uv": [0, 5], "mirror": false},
+						{"origin": [-3, 32, -1], "size": [1, 2, 3], "uv": [0, 0], "mirror": false},
+						{"origin": [-3, 29, -11], "size": [1, 1, 2], "uv": [0, 5], "mirror": false}
+					]
+				},
+				{
+					"name": "dragon_jaw",
+					"parent": "head",
+					"pivot": [0, 26, -4],
+					"cubes": [
+						{"origin": [-3, 24, -12], "size": [6, 2, 8], "uv": [20, 20]}
+					]
+				}
+			]
+		}
+	]
+}
