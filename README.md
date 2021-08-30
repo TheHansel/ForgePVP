@@ -23,7 +23,7 @@ Download Minecraft Forge from [here](https://maven.minecraftforge.net/net/minecr
 
 Install Minecraft Forge.
 
-Download the zip file from [here](https://github.com/TheHansel/ForgePVP/releases/download/1.1.3/ForgePVP-1.8.9-1.1.3.zip)
+Download the zip file from [here](https://github.com/TheHansel/ForgePVP/releases/tag/1.1.4)
 
 Create somewhere new directory
 
