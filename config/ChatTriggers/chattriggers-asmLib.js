@@ -1,9 +1,10 @@
-const ASMAt = Java.type('me.falsehonesty.asmhelper.dsl.At');
-const ASMInjectionPoint = Java.type('me.falsehonesty.asmhelper.dsl.InjectionPoint');
-const ASMDescriptor = Java.type('me.falsehonesty.asmhelper.dsl.instructions.Descriptor');
+const ASMAt = Java.type('dev.falsehonesty.asmhelper.dsl.At');
+const ASMInjectionPoint = Java.type('dev.falsehonesty.asmhelper.dsl.InjectionPoint');
+const ASMDescriptor = Java.type('dev.falsehonesty.asmhelper.dsl.instructions.Descriptor');
 const asmInjectHelper = Java.type('com.chattriggers.ctjs.engine.langs.js.JSLoader').INSTANCE.asmInjectHelper;
 const asmRemoveHelper = Java.type('com.chattriggers.ctjs.engine.langs.js.JSLoader').INSTANCE.asmRemoveHelper;
 const asmFieldHelper = Java.type('com.chattriggers.ctjs.engine.langs.js.JSLoader').INSTANCE.asmFieldHelper;
+const ASMMethodKt = Java.type('dev.falsehonesty.asmhelper.dsl.Method');
 
 const proxyInsnList = $ => {
     const proxy = new Proxy({builder: $}, {
@@ -17,7 +18,7 @@ const proxyInsnList = $ => {
                 // on the InsnListBuilder to that builder. Otherwise, thisObj
                 // will be set to the global scope.
                 return functionId => {
-                    let handle = target.builder.indyHandle.bind(target.builder)(
+                    let handle = target.builder.handle.bind(target.builder)(
                         target.builder.H_INVOKESTATIC,
                         "com/chattriggers/ctjs/launch/IndySupport",
                         "bootstrapInvokeJS",
@@ -25,6 +26,7 @@ const proxyInsnList = $ => {
                     );
 
                     target.builder.invokeDynamic.bind(target.builder)(
+                        "",
                         "invokeJSFunction",
                         "([Ljava/lang/Object;)Ljava/lang/Object;",
                         handle,
@@ -61,7 +63,7 @@ const proxyInsnList = $ => {
 
                         // The following methods always return something other
                         // than the builder
-                        if (key === 'makeLabel' || key === 'indyHandle') {
+                        if (key === 'makeLabel' || key === 'handle') {
                             return result;
                         }
 
@@ -105,12 +107,12 @@ class RemoveBuilder extends ASMBuilder {
     }
 
     numberToRemove(numberToRemove) {
-        this.numberToRemove = numberToRemove;
+        this._numberToRemove = numberToRemove;
         return this;
     }
 
     execute() {
-        asmRemoveHelper(this.className, this.at, this.methodName, this.descriptor, this._methodMaps, this.numberToRemove);
+        asmRemoveHelper(this.className, this.at, this.methodName, this.descriptor, this._methodMaps, this._numberToRemove);
     }
 }
 
@@ -197,9 +199,9 @@ export default class ASM {
 
     static currentModule = "";
 
-    static JumpCondition = Java.type('me.falsehonesty.asmhelper.dsl.instructions.JumpCondition');
+    static JumpCondition = Java.type('dev.falsehonesty.asmhelper.dsl.instructions.JumpCondition');
 
-    static AccessType = Java.type('me.falsehonesty.asmhelper.dsl.writers.AccessType');
+    static AccessType = Java.type('dev.falsehonesty.asmhelper.dsl.writers.AccessType');
 
     static ARRAY(o) {
         return `[${o}`;
@@ -227,6 +229,10 @@ export default class ASM {
 
     static fieldBuilder(className, fieldName, descriptor, ...accessTypes) {
         return new FieldBuilder(className, fieldName, descriptor, accessTypes);
+    }
+
+    static modify(className, block) {
+        ASMMethodKt.modify(className, block);
     }
 }
 
