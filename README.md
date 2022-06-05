@@ -3,7 +3,7 @@ Minecraft modpack
 
 ## Short description
 Forge PVP is a lightweight Minecraft 1.8.9 modpack for PVP
-It has 13 client-side mods dedicated to PVP. It also has mods for Hypixel and therefore does not have a minimap as it is not allowed.
+It has 23 client-side mods dedicated to PVP. It also has mods for Hypixel and therefore does not have a minimap as it is not allowed.
 <br>
 There are four optimization mods here so you'll have more FPS when playing.
 
